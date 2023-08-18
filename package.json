@@ -1,0 +1,107 @@
+{
+    "name": "failsafe",
+    "license": "MIT",
+    "version": "0.1.0",
+    "description": "SafeFunc is an error-handling model, inspired by Rust, which treats errors as expected parts of the logic flow in software development, thereby avoiding disruptive throwing and catching, and ensuring functions return expected values or failure types.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/innerselflabs/failsafe.git"
+    },
+    "homepage": "https://github.com/innerselflabs/failsafe",
+    "bugs": "https://github.com/innerselflabs/failsafe/issues",
+    "keywords": [
+        "typescript",
+        "error-handling"
+    ],
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        },
+        "./package.json": "./package.json"
+    },
+    "typesVersions": {
+        "*": {}
+    },
+    "files": [
+        "dist/**/*",
+        "LICENSE",
+        "README.md"
+    ],
+    "scripts": {
+        "dev": "tsup --watch",
+        "build": "tsup",
+        "fmt": "prettier --write .",
+        "test": "vitest run",
+        "test:coverage": "vitest run --coverage",
+        "test:watch": "vitest watch",
+        "semantic-release": "semantic-release"
+    },
+    "devDependencies": {
+        "@types/node": "^20.5.1",
+        "@vitest/coverage-v8": "^0.34.2",
+        "conventional-changelog-conventionalcommits": "^6.1.0",
+        "prettier": "^3.0.2",
+        "semantic-release": "^21.0.7",
+        "tsup": "^7.2.0",
+        "typescript": "^5.1.6",
+        "vitest": "^0.34.2",
+        "zod": "^3.22.1"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "release": {
+        "branches": [
+            "main"
+        ],
+        "plugins": [
+            [
+                "@semantic-release/commit-analyzer",
+                {
+                    "preset": "conventionalcommits",
+                    "releaseRules": [
+                        {
+                            "type": "build",
+                            "scope": "deps",
+                            "release": "patch"
+                        }
+                    ]
+                }
+            ],
+            [
+                "@semantic-release/release-notes-generator",
+                {
+                    "preset": "conventionalcommits",
+                    "presetConfig": {
+                        "types": [
+                            {
+                                "type": "feat",
+                                "section": "Features"
+                            },
+                            {
+                                "type": "fix",
+                                "section": "Bug Fixes"
+                            },
+                            {
+                                "type": "docs",
+                                "section": "Documentation Changes"
+                            },
+                            {
+                                "type": "build",
+                                "section": "Dependencies and Other Build Updates",
+                                "hidden": false
+                            }
+                        ]
+                    }
+                }
+            ],
+            "@semantic-release/npm",
+            "@semantic-release/github"
+        ]
+    }
+}

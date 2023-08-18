@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "lib": ["ESNext", "DOM"],
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "resolveJsonModule": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "ESNext",
+        "paths": {
+            "~/*": ["./src/*"]
+        }
+    },
+    "include": ["./src/**/*.ts", "./tests/**/*.test.ts"],
+    "exclude": ["node_modules", "dist"]
+}
