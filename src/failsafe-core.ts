@@ -1,14 +1,13 @@
 /**
- * SafeFunc
+ * FAILSAFE
  * A collaborative effort by Parsons + Rapport
- * LICENSE: MIT
  *
- * OVERVIEW:
- * SafeFunc is an error-handling model, inspired by Rust, which treats errors as expected parts of
+ * OVERVIEW
+ * FailSafe is an error-handling model, inspired by Rust, which treats errors as expected parts of
  * the logic flow in software development, thereby avoiding disruptive throwing and catching, and
  * ensuring functions return expected values or failure types.
  *
- * BACKGROUND:
+ * BACKGROUND
  * In the realm of software development, one universal truth is the inevitability of errors. Whether
  * they originate from faulty code, incorrect APIs, or bad data, errors are omnipresent. They are an
  * integral part of software development, and there's no escaping them.
@@ -19,22 +18,22 @@
  * reinforcing the idea that errors are not anomalies but rather expected occurrences. This raises the
  * question: Should we refer to errors as "exceptions" or more appropriately as "expectations"?
  *
- * SafeFunc, an error handling model inspired by Rust, seeks to address this question. It encourages
+ * FailSafe, an error handling model inspired by Rust, seeks to address this question. It encourages
  * better error handling patterns, ensuring errors remain part of the logical flow of the program
  * rather than disrupting it through throwing and catching. By treating errors as "expectations",
- * SafeFunc maintains the continuity of the logic flow.
+ * FailSafe maintains the continuity of the logic flow.
  *
- * In TypeScript, SafeFunc utilizes the `satisfies` keyword. This keyword guarantees that the SafeFunc
+ * In TypeScript, FailSafe utilizes the `satisfies` keyword. This keyword guarantees that the FailSafe
  * functions you write will certainly return the expected value or failure type. Simultaneously, it
  * allows the precise details of the failure or the value to propagate up the call stack, offering
  * richer error information.
  *
- * PHILOSOPHY:
- * An essential aspect of SafeFunc's philosophy is to abstain from using `throw` in a function. This
+ * PHILOSOPHY
+ * An essential aspect of FailSafe's philosophy is to abstain from using `throw` in a function. This
  * approach reinforces the idea of treating errors as a part of the normal flow, rather than as
  * exceptions that need to be caught and handled separately.
  *
- * USAGE:
+ * USAGE
  *
  *  const safeArrowFunc = (() => {
  *    const rand = Math.random();
@@ -47,13 +46,36 @@
  *    } else {
  *      return Value({ foo: "some data", baz: rand, qux: [12,34,56] });
  *    }
- *  }) satisfies SafeFunc; // <-- This ensures the function follows the SafeFunc pattern without stopping
+ *  }) satisfies SafeFunction; // <-- This ensures the function follows the SafeFunction pattern without stopping
  *                                the deeper details from flowing up the call stack.
  *
  *
  * REFERENCES:
  * This video is a great explanation of reasoning for this pattern, and a source of some of the content
  * of this overview. https://www.youtube.com/watch?v=sbVxq7nNtgo
+ *
+ *
+ * MIT License
+ *
+ * Copyright (c) 2021 Inner Self Labs, LLC
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  *
  */
 

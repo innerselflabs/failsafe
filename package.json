@@ -1,5 +1,5 @@
 {
-    "name": "failsafe",
+    "name": "@innerselflabs/failsafe",
     "license": "MIT",
     "version": "0.1.0",
     "description": "SafeFunc is an error-handling model, inspired by Rust, which treats errors as expected parts of the logic flow in software development, thereby avoiding disruptive throwing and catching, and ensuring functions return expected values or failure types.",
