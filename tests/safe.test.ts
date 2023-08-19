@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { safe } from '~/index';
+import safe from '~/index';
 
 describe('value', () => {
     describe('values', () => {
